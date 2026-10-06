@@ -1,0 +1,36 @@
+# Cấu hình Claude Code và bản thiết kế gốc: giữ cục bộ, không đưa vào git
+.claude
+design
+
+# Phụ thuộc
+node_modules
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Kết quả build, kiểm thử (Next.js, backend)
+.next
+dist
+out
+build
+coverage
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+
+# Biến môi trường: chứa khóa bí mật, KHÔNG commit. Riêng file mẫu .env.example thì commit.
+.env
+.env.*
+!.env.example
+
+# Khác
+.DS_Store
+*.pem
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*

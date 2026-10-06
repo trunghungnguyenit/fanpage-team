@@ -1,0 +1,319 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------- Design token giao diện sáng (theo thiết kế HTCode v4) ---------- */
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #fbfcfe;
+  --muted: #f1f4fa;
+  --muted-hover: #e6ebf6;
+  --line: #e8ecf5;
+  --line-soft: #eef1f7;
+  --line-strong: #dde3ef;
+  --line-brand: #c9d6f5;
+  --line-brand-hover: #9fb5ef;
+  --fg: #0f1a3a;
+  --fg-2: #3d4866;
+  --fg-3: #5a6684;
+  --fg-4: #636d87;
+  --brand: #2b5be8;
+  --brand-hover: #1f4bd0;
+  --brand-deep: #1f45c2;
+  --brand-text: #2b5be8;
+  --brand-soft: #eef3ff;
+  --brand-soft-2: #f2f6ff;
+  --on-brand-muted: #e3eaff;
+  --danger: #c4321f;
+  --danger-line: #e0634f;
+  --header-bg: rgb(255 255 255 / 0.9);
+  --hero-glow-1: #eef3ff;
+  --hero-glow-2: #f4f1ff;
+  --hero-ring: #e4eafb;
+  --illo-a: #c9d6f5;
+  --illo-b: #8ea9fa;
+
+  --tint-blue-soft: #eef3ff;
+  --tint-blue-chip: #dde7ff;
+  --tint-blue-fg: #2b5be8;
+  --tint-green-soft: #e9f8f1;
+  --tint-green-chip: #d3f1e3;
+  --tint-green-fg: #0c6e46;
+  --tint-purple-soft: #f2eeff;
+  --tint-purple-chip: #e5dcff;
+  --tint-purple-fg: #6a43d6;
+  --success: #129a63;
+
+  --cover-blue-from: #eef3ff;
+  --cover-blue-to: #d9e4ff;
+  --cover-green-from: #ecfaf3;
+  --cover-green-to: #cfeedd;
+  --cover-purple-from: #f4f0ff;
+  --cover-purple-to: #e0d6ff;
+}
+
+/* ---------- Giao diện tối: suy ra từ màu thương hiệu #2b5be8 ---------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --surface: #121a31;
+  --surface-2: #0f1629;
+  --muted: #1a2340;
+  --muted-hover: #232d50;
+  --line: #232d4d;
+  --line-soft: #1b2440;
+  --line-strong: #2c3760;
+  --line-brand: #33447f;
+  --line-brand-hover: #4a63b3;
+  --fg: #e8ecf8;
+  --fg-2: #c3cbe2;
+  --fg-3: #9aa5c4;
+  --fg-4: #8a97b8;
+  --brand-text: #8aa8ff;
+  --brand-soft: #172249;
+  --brand-soft-2: #141c3d;
+  --danger: #ff8a78;
+  --danger-line: #ff8a78;
+  --header-bg: rgb(11 16 32 / 0.85);
+  --hero-glow-1: #111a3a;
+  --hero-glow-2: #17133a;
+  --hero-ring: #1c2748;
+  --illo-a: #33447f;
+  --illo-b: #5a83f7;
+
+  --tint-blue-soft: #172249;
+  --tint-blue-chip: #233266;
+  --tint-blue-fg: #8aa8ff;
+  --tint-green-soft: #0f2a22;
+  --tint-green-chip: #17402f;
+  --tint-green-fg: #5fd3a2;
+  --tint-purple-soft: #1f1a3d;
+  --tint-purple-chip: #2d2658;
+  --tint-purple-fg: #b79cff;
+  --success: #3fd08f;
+
+  --cover-blue-from: #172249;
+  --cover-blue-to: #1f2f66;
+  --cover-green-from: #0f2a22;
+  --cover-green-to: #174033;
+  --cover-purple-from: #1f1a3d;
+  --cover-purple-to: #2f2663;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-muted: var(--muted);
+  --color-muted-hover: var(--muted-hover);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-line-strong: var(--line-strong);
+  --color-line-brand: var(--line-brand);
+  --color-line-brand-hover: var(--line-brand-hover);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-fg-3: var(--fg-3);
+  --color-fg-4: var(--fg-4);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-deep: var(--brand-deep);
+  --color-brand-text: var(--brand-text);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-soft-2: var(--brand-soft-2);
+  --color-on-brand-muted: var(--on-brand-muted);
+  --color-danger: var(--danger);
+  --color-danger-line: var(--danger-line);
+  --color-header: var(--header-bg);
+  --color-success: var(--success);
+  --color-hero-ring: var(--hero-ring);
+  --color-illo-a: var(--illo-a);
+  --color-illo-b: var(--illo-b);
+  --color-tint-blue-soft: var(--tint-blue-soft);
+  --color-tint-blue-chip: var(--tint-blue-chip);
+  --color-tint-blue-fg: var(--tint-blue-fg);
+  --color-tint-green-soft: var(--tint-green-soft);
+  --color-tint-green-chip: var(--tint-green-chip);
+  --color-tint-green-fg: var(--tint-green-fg);
+  --color-tint-purple-soft: var(--tint-purple-soft);
+  --color-tint-purple-chip: var(--tint-purple-chip);
+  --color-tint-purple-fg: var(--tint-purple-fg);
+
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-mono: ui-monospace, Menlo, monospace;
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-rise: rise 0.6s ease-out both;
+  --animate-slide-up: slide-up 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-fade-in: fade-in 0.25s ease-out both;
+  --animate-slide-left: slide-left 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: none;
+    }
+  }
+  @keyframes slide-left {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: none;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* Gradient ảnh bìa dự án, mỗi tông màu một kiểu. */
+@utility cover-blue {
+  background-image: linear-gradient(
+    140deg,
+    var(--cover-blue-from),
+    var(--cover-blue-to)
+  );
+}
+@utility cover-green {
+  background-image: linear-gradient(
+    140deg,
+    var(--cover-green-from),
+    var(--cover-green-to)
+  );
+}
+@utility cover-purple {
+  background-image: linear-gradient(
+    140deg,
+    var(--cover-purple-from),
+    var(--cover-purple-to)
+  );
+}
+
+/* Cỡ chữ dùng chung cho hero và tiêu đề các section. */
+@utility text-display {
+  font-size: clamp(2.5rem, 7.4vw, 4.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+}
+@utility text-h2 {
+  font-size: clamp(1.875rem, 5vw, 2.875rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+ * Hiện dần khi cuộn tới (CSS thuần, không cần JS nên không bị nháy khi render server).
+ * Trình duyệt chưa hỗ trợ scroll-driven animation sẽ hiện nội dung ngay.
+ */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0px entry 220px;
+    }
+  }
+}
+
+/* Gán tạm khi đổi theme để màu đổi cùng lúc, không chuyển dần từng phần tử. */
+[data-theme-switching] *,
+[data-theme-switching] *::before,
+[data-theme-switching] *::after {
+  transition: none !important;
+}
+
+/* Cảm giác như app trên điện thoại: bỏ độ trễ chạm đúp, bỏ mảng sáng khi chạm, chặn trình duyệt tự phóng chữ khi xoay ngang. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+a,
+button,
+input,
+select,
+textarea,
+[role="button"],
+[role="tab"],
+[role="switch"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--brand-text);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
